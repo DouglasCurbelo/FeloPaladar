@@ -13,5 +13,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^$','Web.views.home')
     url(r'^$','products.views.product_list'),
-    (r'^cart/', include('cart.urls')),	
+    (r'^restaurant_cart/', include('restaurant_cart.urls')),	
 )

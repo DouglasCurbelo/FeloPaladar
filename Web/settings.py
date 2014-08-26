@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'products',
     'users',
     'cart',
+    'restaurant_cart',
     # 'djangodblog'
 )
 

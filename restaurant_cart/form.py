@@ -16,4 +16,5 @@ class PlateAddToCartForm(forms.Form):
 		if self.request:
 			if not self.request.session.test_cookie_worked():
 				raise forms.ValidationError("Cookies must be enabled.")
+			
 		return self.cleaned_data

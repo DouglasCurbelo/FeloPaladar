@@ -11,7 +11,7 @@ class PlateManager(models.Manager):
 	def get_actives_plates(self):
 		return self.filter(is_active=True)
 
-
+	
 
 class Plate(models.Model):
 	name=models.CharField(max_length=50)
