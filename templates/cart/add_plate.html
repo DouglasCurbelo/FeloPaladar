@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block main %}
+    Product Name: {{plate.name}}
+     <form method="post" action="." class="cart">
+        {% csrf_token%}
+        {{ form.as_p }}
+        <br />
+        <input type="submit" value="Add To Cart" name="submit" alt="Add To Cart" />
+        </form>
+    <div class="cb"></div>
+
+{% endblock %}

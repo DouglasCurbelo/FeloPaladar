@@ -66,9 +66,33 @@ class Cart:
                 cart=self.cart,
                 product=product,
             )
+            item.unit_price = unit_price
+            item.quantity = quantity
+            item.save()
         except models.Item.DoesNotExist:
             raise ItemDoesNotExist
 
+    def get_item(self,product):
+        try:
+            item = models.Item.objects.get(
+                cart=self.cart,
+                product=product,
+            )
+            return item
+        except models.Items.DoesNotExist:
+            raise ItemDoesNotExist
+
+    def add_quantity(self,product,quantity):
+        try:
+            item = models.Item.objects.get(
+                cart=self.cart,
+                product=product,
+            )
+            item.quantity+=quantity
+            item.save()
+        except models.Item.DoesNotExist:
+            raise ItemDoesNotExist
+            
     def clear(self):
         for item in self.cart.item_set:
             item.delete()
